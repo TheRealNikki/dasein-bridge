@@ -445,9 +445,9 @@ People lead. Technology follows. Humanity rises.
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-3">
             {[
-              { tag: "Live Product", title: "WeeksWorth", desc: "Enter any job title. Get a complete learning roadmap — modules, free resources, capstone project. No gatekeeping. No sign-up." },
-              { tag: "In Development", title: "Universal Framework Converter", desc: "Helps programmers move between languages and frameworks. Removes friction for learners growing skill by skill." },
-              { tag: "Core Infrastructure", title: "Encoder Framework", desc: "Shared foundation across our stack — balanced inputs, stable outputs, clear interpretation, human-aligned at every layer." }
+              { tag: "Coming Soon", title: "WeeksWorth", desc: "Enter any job title. Get a complete learning roadmap — modules, free resources, capstone project. No gatekeeping. No sign-up." },
+              { tag: "In Development", title: "Couria", desc: "Coordinate across every timezone without the mental math. Couria knows each contact's hours, drafts your message, and releases it when it'll land right - so no one ever gets pinged at 3 AM." },
+              { tag: "In Development", title: "eDrop", desc: "Audits how your software is built and surfaces the hidden waste — the energy-hungry patterns most teams never see. Lighter code, faster loads, a smaller carbon footprint at range and scale." }
             ].map((item, i) => (
               <Reveal key={i} delay={0.1 * (i + 1)}>
                 <div className="card-dark" style={{ padding: "36px 28px", height: "100%" }}>
