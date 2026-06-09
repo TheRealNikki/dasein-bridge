@@ -71,8 +71,8 @@ const HexPattern = () => (
 
 const WavePattern = () => (
   <svg style={{ position: "absolute", bottom: 0, left: 0, width: "100%", opacity: 0.12, pointerEvents: "none" }} viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z" fill="#2a9d8f"/>
-    <path d="M0,80 C360,40 720,100 1080,60 C1260,40 1380,80 1440,70 L1440,120 L0,120 Z" fill="#1a6b5a" opacity="0.6"/>
+    <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z" fill="#0c1d69"/>
+    <path d="M0,80 C360,40 720,100 1080,60 C1260,40 1380,80 1440,70 L1440,120 L0,120 Z" fill="#184888" opacity="0.6"/>
   </svg>
 );
 
@@ -95,23 +95,33 @@ export default function DaseinBridge() {
   ];
 
   return (
-    <div style={{ background: "#060f0e", color: "#e8e4dc", fontFamily: "'Georgia', serif", overflowX: "hidden" }}>
+    <div style={{ background: "linear-gradient(180deg, #0a1622 0%, #0c1f2a 50%, #0a1622 100%)", color: "#e8e4dc", fontFamily: "'Georgia', serif", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         :root {
-          --forest: #060f0e;
-          --deep: #0a1a18;
-          --mid: #0f2420;
-          --teal: #1a4a40;
-          --bright: #2a9d8f;
-          --sage: #7ec8a0;
-          --gold: #d4a853;
-          --amber: #e8c56a;
-          --cream: #e8e4dc;
+          --forest: #0a1410;
+          --deep: #0c1f2a;
+          --mid: #122821;
+          --teal: #16413f;
+          --bright: #2f7d9e;
+          --sage: #8fb4c4;
+          --moss: #5e7f8f;
+          --fern: #4a7a52;
+          --pine: #163d2f;
+          --gold: #b87a35;
+          --amber: #d9a84e;
+          --bronze: #8a6a32;
+          --bark: #5e4326;
+          --clay: #a8623c;
+          --coral: #c46a4a;
+          --cream: #ece6d8;
           --muted: #9a9488;
-          --coral: #e07a5f;
+          --blue : #2f6f9e;
+          --deepblue: #1a4665;
+          --ice: #7fb0c9;
+          --night: #0a1622;
         }
         .cg { font-family: 'Cormorant Garamond', Georgia, serif; }
         .dm { font-family: 'DM Sans', sans-serif; }
@@ -207,12 +217,20 @@ export default function DaseinBridge() {
           0% { transform: scale(0.8); opacity: 0.6; }
           100% { transform: scale(2.5); opacity: 0; }
         }
+             @keyframes rootGrow {
+        0% { stroke-dashoffset: 1000; }
+        45% { stroke-dashoffset: 0; }
+        55% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 1000; }
+      }
 
         @media (max-width: 768px) {
           .section-wrap { padding: 0 20px; }
           .hero-title { font-size: clamp(44px, 11vw, 80px) !important; }
           .grid-2, .grid-3, .team-grid { grid-template-columns: 1fr !important; }
           .hero-btns { flex-direction: column; align-items: center; }
+          .nav-links { display: none !important; }
+
         }
       `}</style>
 
@@ -228,7 +246,7 @@ export default function DaseinBridge() {
           <a href="#" className="cg" style={{ fontSize: 24, fontWeight: 600, letterSpacing: 0.5 }}>
             Dasein<span className="gold" style={{ fontStyle: "italic" }}>Bridge</span>
           </a>
-          <div className="dm" style={{ display: "flex", gap: 40, alignItems: "center" }}>
+          <div className="dm nav-links" style={{ display: "flex", gap: 40, alignItems: "center" }}>
             {navItems.map(n => (
               <a key={n.id} href={`#${n.id}`}
                 style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)", transition: "color 0.2s" }}
@@ -236,8 +254,9 @@ export default function DaseinBridge() {
                 onMouseLeave={e => e.target.style.color = "var(--muted)"}
               >{n.label}</a>
             ))}
-            <a href="#contact" className="btn-ghost" style={{ padding: "8px 20px", fontSize: 11 }}>Get In Touch</a>
+
           </div>
+          <a href="#contact" className="btn-ghost" style={{ padding: "8px 20px", fontSize: 11}}>Get In Touch</a>
         </div>
       </nav>
 
@@ -245,7 +264,7 @@ export default function DaseinBridge() {
       <section style={{
         minHeight: "100vh", display: "flex", alignItems: "center",
         position: "relative", overflow: "hidden",
-        background: "radial-gradient(ellipse at 20% 80%, rgba(26,74,64,0.5) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(42,157,143,0.15) 0%, transparent 50%), #060f0e"
+        background: "radial-gradient(ellipse at 20% 80%, rgba(26,56,84,0.5) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(3, 43, 124, 0.48) 0%, transparent 50%), #060f0e"
       }}>
         <RootPattern />
 
@@ -253,26 +272,22 @@ export default function DaseinBridge() {
         <div style={{
           position: "absolute", right: "8%", top: "50%", transform: "translateY(-50%)",
           width: 360, height: 360, borderRadius: "50%",
-          background: "radial-gradient(circle at 35% 40%, rgba(42,157,143,0.3), rgba(6,15,14,0.0) 70%)",
+          background: "radial-gradient(circle at 35% 40%, rgba(15, 88, 21, 0.38), rgba(6,15,14,0.0) 70%)",
           animation: "floatSlow 8s ease-in-out infinite",
           pointerEvents: "none"
         }}>
-          <div style={{
-            position: "absolute", inset: 20, borderRadius: "50%",
-            border: "1px solid rgba(42,157,143,0.2)",
-            animation: "pulse 4s ease-in-out infinite"
-          }}/>
-          <div style={{
-            position: "absolute", inset: 60, borderRadius: "50%",
-            border: "1px solid rgba(212,168,83,0.15)",
-            animation: "pulse 4s ease-in-out infinite 1s"
-          }}/>
-          <div style={{
-            position: "absolute", inset: "50%", width: 80, height: 80,
-            marginLeft: -40, marginTop: -40, borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(42,157,143,0.6), transparent 70%)",
-            animation: "pulse 3s ease-in-out infinite 0.5s"
-          }}/>
+          <svg viewBox="0 0 360 360" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", overflow: "visible" }}>
+  <g fill="none" stroke="rgba(42,157,143,0.55)" strokeWidth="1.4" strokeLinecap="round">
+  <path d="M180,180 C195,140 185,95 180,55 C175,95 165,140 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite" }} />
+  <path d="M180,180 C220,160 255,130 280,95 C245,120 210,150 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 0.3s" }} />
+  <path d="M180,180 C225,185 265,200 300,185 C260,200 215,200 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 0.6s" }} />
+  <path d="M180,180 C215,215 245,250 255,290 C235,250 205,215 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 0.9s" }} />
+  <path d="M180,180 C185,225 175,265 180,305 C175,265 165,225 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 1.2s" }} />
+  <path d="M180,180 C145,215 115,250 105,290 C125,250 155,215 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 1.5s" }} />
+  <path d="M180,180 C135,185 95,200 60,185 C100,200 145,200 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 1.8s" }} />
+  <path d="M180,180 C140,160 105,130 80,95 C115,120 150,150 180,180" style={{ strokeDasharray: 1000, animation: "rootGrow 9s ease-in-out infinite 2.1s" }} />
+  </g>
+</svg>
         </div>
 
         {/* Ripple rings */}
@@ -289,7 +304,7 @@ export default function DaseinBridge() {
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1120, margin: "0 auto", padding: "120px 40px 80px", width: "100%" }}>
           <div className="dm label" style={{ animation: "heroFadeUp 1s ease 0.2s both" }}>
-            Governed AI · Human Direction · Accountability Built In
+            Directed By Humans · Accountable Infrastructure · AI Reimagined
           </div>
           <h1 className="cg hero-title" style={{
             fontSize: "clamp(52px, 7vw, 88px)", fontWeight: 300, lineHeight: 1.1,
@@ -304,8 +319,15 @@ export default function DaseinBridge() {
             marginBottom: 48, marginTop: 24,
             animation: "heroFadeUp 1s ease 0.6s both"
           }}>
-            We build AI that strengthens and lifts. Protecting dignity, supporting communities with care, clarity, and responsibility that sustains.
-          </p>
+            We build AI that strengthens and lifts. Protecting dignity, supporting communities with care, clarity, and responsibility that sustains, by bringing the future to you. 
+            </p>
+          <p className="cg" style={{
+fontSize: 22, lineHeight: 1.5, color: "var(--sage)", maxWidth: 540,
+marginBottom: 48, fontStyle: "italic",
+animation: "heroFadeUp 1s ease 0.7s both"
+}}>
+People lead. Technology follows. Humanity rises.
+</p>
           <div className="hero-btns" style={{
             display: "flex", gap: 16, flexWrap: "wrap",
             animation: "heroFadeUp 1s ease 0.8s both"
@@ -315,8 +337,8 @@ export default function DaseinBridge() {
           </div>
 
           <div style={{ marginTop: 80, display: "flex", gap: 48, flexWrap: "wrap", animation: "heroFadeUp 1s ease 1s both" }}>
-            {[["People Lead", "Technology follows human intention."], ["No Gatekeeping", "Genius knows no socio-economic boundaries."], ["Accountability", "Trust is structural, not a feature."]].map(([t, d]) => (
-              <div key={t} style={{ borderLeft: "2px solid rgba(42,157,143,0.4)", paddingLeft: 16 }}>
+            {[["Led By Us", "We carve the path, technology follows suit."], ["No Gatekeeping", "At Dasein, we believe that genius knows no economic boundary."], ["Accountability", "Trust is structural, not a feature."]].map(([t, d]) => (
+              <div key={t} style={{ borderLeft: "2px solid rgba(25, 70, 139, 0.4)", paddingLeft: 16 }}>
                 <div className="cg" style={{ fontSize: 17, color: "var(--cream)", marginBottom: 4 }}>{t}</div>
                 <div className="dm" style={{ fontSize: 13, color: "var(--muted)" }}>{d}</div>
               </div>
@@ -328,8 +350,8 @@ export default function DaseinBridge() {
       </section>
 
       {/* ═══ MISSION ═══ */}
-      <section id="mission" style={{ background: "var(--deep)", position: "relative", overflow: "hidden", padding: "120px 0" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 50%, rgba(126,200,160,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(ellipse at 20% 80%, rgba(11,73,29,0.28) 0%, transparent 50%)", pointerEvents: "none"}} />
+      <section id="mission" style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(11,40,45,0.92) 45%, rgba(9,52,38,0.92) 72%, rgba(6,58,30,0.95) 100%)", position: "relative", overflow: "hidden", padding: "120px 0" }}>
         <div className="section-wrap">
           <Reveal>
             <div className="label">Our Foundation</div>
@@ -353,15 +375,15 @@ export default function DaseinBridge() {
                   "To forge a transformative bridge between untapped brilliance and established expertise — creating a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies."
                 </p>
                 <div className="dm" style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>
-                  — Whirlpool Mission Statement, 2019
+                  — Founding Vision, est. 2000
                 </div>
               </blockquote>
               <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 {[
-                  { n: "People First.", d: "Always." },
-                  { n: "No Barriers.", d: "To brilliance." },
-                  { n: "Real Trust.", d: "Not a feature." },
-                  { n: "Long Game.", d: "Always." }
+                  { n: "People First~", d: "Always." },
+                  { n: "~No Barriers", d: "To brilliance." },
+                  { n: "Real Trust~", d: "Not a feature." },
+                  { n: "~Long Game", d: "Since Day One." }
                 ].map(item => (
                   <div key={item.n} style={{ padding: "20px", background: "rgba(42,157,143,0.06)", borderTop: "1px solid rgba(42,157,143,0.2)" }}>
                     <div className="cg" style={{ fontSize: 17, color: "var(--cream)", fontWeight: 600 }}>{item.n}</div>
@@ -375,7 +397,7 @@ export default function DaseinBridge() {
       </section>
 
       {/* ═══ SYSTEMS ═══ */}
-      <section id="systems" style={{ background: "var(--forest)", position: "relative", overflow: "hidden", padding: "120px 0" }}>
+      <section id="systems" style={{ background: "linear-gradient(180deg, rgba(4,32,20,0.95) 0%, rgba(8,40,38,0.9) 40%, rgba(12,31,42,0.85) 100%", position: "relative", overflow: "hidden", padding: "120px 0" }}>
         <HexPattern />
         <div className="section-wrap" style={{ position: "relative", zIndex: 1 }}>
           <Reveal>
@@ -386,12 +408,12 @@ export default function DaseinBridge() {
               Every tool we build removes a barrier, extends a pathway, or hands power back to the person who needs it.
             </p>
           </Reveal>
-
+  
           {/* SPL Feature Card */}
           <Reveal delay={0.1}>
             <div style={{
-              background: "linear-gradient(135deg, rgba(26,74,64,0.6) 0%, rgba(15,36,32,0.8) 100%)",
-              border: "1px solid rgba(42,157,143,0.25)",
+              background: "linear-gradient(135deg, rgba(11, 73, 29, 0.66) 8%, rgba(11, 27, 60, 0.8) 92%)",
+              border: "1px solid rgba(28, 101, 189, 0.38)",
               padding: "56px 48px", marginBottom: 24, position: "relative", overflow: "hidden"
             }}>
               <div style={{ position: "absolute", top: 0, right: 0, width: 300, height: 300, background: "radial-gradient(circle at center, rgba(42,157,143,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
@@ -405,9 +427,9 @@ export default function DaseinBridge() {
                     A self-distilling swarm intelligence — inspired by termite colonies and honeybee waggle dances — that converts expensive LLM deliberation into rapid, cheap reflexes. Gets smarter and cheaper with every deployment. Documented 10–50x cost reduction.
                   </p>
                   <div style={{ display: "flex", gap: 40, flexWrap: "wrap", marginBottom: 32 }}>
-                    {[["13.9x", "Cost Reduction"], ["5.5%", "Reach Layer 2"], ["<15ms", "Layer 1 Response"]].map(([n, l]) => (
+                    {[["13.9x", "Cost Reduction"], ["5.5%", "Reach Layer 2"], ["<5-15ms", "Layer 1 Response"]].map(([n, l]) => (
                       <div key={l}>
-                        <div className="cg" style={{ fontSize: 36, fontWeight: 600, color: "var(--sage)" }}>{n}</div>
+                        <div className="cg" style={{ fontSize: 36, fontWeight: 600, color: "var(--sage)" , marginBottom: 10}}>{n}</div>
                         <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>{l}</div>
                       </div>
                     ))}
@@ -457,7 +479,7 @@ export default function DaseinBridge() {
       </section>
 
       {/* ═══ SERVICES ═══ */}
-      <section id="services" style={{ background: "var(--mid)", padding: "120px 0", position: "relative", overflow: "hidden" }}>
+      <section id="services" style={{ background: "transparent", padding: "120px 0", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 70%, rgba(212,168,83,0.04) 0%, transparent 50%)", pointerEvents: "none" }} />
         <div className="section-wrap">
           <Reveal>
@@ -512,10 +534,10 @@ export default function DaseinBridge() {
                 quote: "Human-in-the-loop is structural. Transparency is the foundation."
               },
               {
-                initial: "N", name: "Nick Smith", role: "Co-Founder & COO",
-                bio: "Independent researcher and pattern engineer. 15 years building interconnected frameworks from first principles — AI cognition, consciousness architecture, biological grounding, systems design. Architect of CRDL and the biological layer for SPL.",
+                initial: "N", name: "Nickolas Smith", role: "Co-Founder & COO",
+                bio: "Independent researcher and systems architect. Fifteen years building interconnected frameworks from first principles — AI cognition, consciousness architecture, biological grounding, and failure-mode analysis. Creator of CRDL and architect of the biological layer beneath SPL. His work at synthosphere treats a non-institutional path as a method, not a disadvantage.",
                 tags: ["synthosphere Research", "CRDL Framework", "Symbolic Compression", "SPL Bio Architecture"],
-                quote: "The credential is a proxy. The work is the thing."
+                quote: "The credential is a proxy. The work is the proof."
               }
             ].map((p, i) => (
               <Reveal key={i} delay={0.15 * i}>
@@ -560,7 +582,7 @@ export default function DaseinBridge() {
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="contact" style={{ background: "var(--mid)", padding: "120px 0" }}>
+      <section id="contact" style={{ background: "transparent", padding: "120px 0" }}>
         <div className="section-wrap">
           <Reveal>
             <div className="label">Get In Touch</div>
@@ -597,8 +619,8 @@ export default function DaseinBridge() {
               <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                 {[
                   { label: "General", email: "general@dasein.works" },
-                  { label: "Founder", email: "pamela@dasein.works" },
-                  { label: "Co-Founder", email: "nick@dasein.works" }
+                  { label: "Founder", email: "P.Cuce@dasein.works" },
+                  { label: "Co-Founder", email: "N.Smith@dasein.works" }
                 ].map((c, i) => (
                   <div key={c.label} style={{ padding: "24px 0", borderBottom: "1px solid rgba(42,157,143,0.12)" }}>
                     <div className="label" style={{ marginBottom: 4 }}>{c.label}</div>
