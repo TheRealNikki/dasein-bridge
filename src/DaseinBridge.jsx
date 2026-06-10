@@ -368,6 +368,29 @@ People lead. Technology follows. Humanity rises.
               <div className="dm" style={{ fontSize: 13, letterSpacing: 1, color: "var(--sage)", textTransform: "uppercase" }}>
                 Context → Structure → Outcome
               </div>
+              {/* FOUNDER CARD (Pam) — moved up from Team */}
+<div style={{ background: "rgba(15,36,32,0.5)", border: "1px solid rgba(42,157,143,0.15)", padding: "40px 36px", marginTop: 48 }}>
+  <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
+    <div style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, var(--teal), var(--bright))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(212,168,83,0.3)" }}>
+      <span className="cg" style={{ fontSize: 24, fontWeight: 600, color: "var(--cream)" }}>P</span>
+    </div>
+    <div>
+      <div className="cg" style={{ fontSize: 22, color: "var(--cream)" }}>Pamela Cuce</div>
+      <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>Founder &amp; CEO</div>
+    </div>
+  </div>
+  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>
+    Biomimetic systems engineer — she uses biology to engineer intelligence. Creator of SPL and author of its founding paper. Her work fuses embodied cognitive science with full-stack and systems engineering: agentic design drawn from how living systems actually adapt, not how software conventionally behaves. At Vassar College she built Mind &amp; Embodiment, a self-directed cognitive science major tracing intelligent behavior across biology, language, and philosophy — the enactivist lineage of Brooks, Pfeifer, Varela, and Maturana. That foundation runs straight through SPL.
+  </p>
+  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+    {["NSF Bioengineering Fellow", "NYU Medical College Developer", "MIT-aligned Instructor", "Second City Trained"].map(t => (
+      <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
+    ))}
+  </div>
+  <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
+    "Human-in-the-loop is structural. Transparency is the foundation."
+  </blockquote>
+</div>
             </Reveal>
             <Reveal delay={0.25}>
               <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
@@ -519,7 +542,7 @@ People lead. Technology follows. Humanity rises.
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 60% 40%, rgba(42,157,143,0.06) 0%, transparent 55%)", pointerEvents: "none" }} />
         <div className="section-wrap">
           <Reveal>
-            <div className="label">The Team</div>
+            <div className="label">The Co-Founder</div>
             <div className="rule" />
             <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>
               Built by people<br /><em className="gold">who believe it.</em>
@@ -527,12 +550,6 @@ People lead. Technology follows. Humanity rises.
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="team-grid">
             {[
-              {
-                initial: "P", name: "Pamela Cuce", role: "Founder & CEO",
-                bio: "AI UX strategist and full-stack builder who turns complex systems into governed, human-ready products. Background in Embodied Cognitive Science and Human–AI Interaction. Her systems mirror how people perceive, adapt, and decide.",
-                tags: ["NSF Bioengineering Fellow", "NYU Medical College Developer", "MIT-aligned Instructor", "Second City Trained"],
-                quote: "Human-in-the-loop is structural. Transparency is the foundation."
-              },
               {
                 initial: "N", name: "Nickolas Smith", role: "Co-Founder & COO",
                 bio: "Independent researcher and systems architect. Fifteen years building interconnected frameworks from first principles — AI cognition, consciousness architecture, biological grounding, and failure-mode analysis. Creator of CRDL and architect of the biological layer beneath SPL. His work at synthosphere treats a non-institutional path as a method, not a disadvantage.",
