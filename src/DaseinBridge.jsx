@@ -268,9 +268,9 @@ export default function DaseinBridge() {
       }}>
         <RootPattern />
 
-        {/* Animated orb */}
+        {/* Animated orb */} 
         <div style={{
-          position: "absolute", right: "8%", top: "50%", transform: "translateY(-50%)",
+          position: "absolute", right: "8%", top: "58%", transform: "translateY(-50%)",
           width: 360, height: 360, borderRadius: "50%",
           background: "radial-gradient(circle at 35% 40%, rgba(15, 88, 21, 0.38), rgba(6,15,14,0.0) 70%)",
           animation: "floatSlow 8s ease-in-out infinite",
@@ -293,7 +293,7 @@ export default function DaseinBridge() {
         {/* Ripple rings */}
         {[1,2,3].map(i => (
           <div key={i} style={{
-            position: "absolute", right: "calc(8% + 140px)", top: "50%",
+            position: "absolute", right: "calc(8% + 140px)", top: "61%",
             width: 20, height: 20, marginLeft: -10, marginTop: -10,
             borderRadius: "50%",
             border: "1px solid rgba(42,157,143,0.3)",
@@ -329,7 +329,7 @@ animation: "heroFadeUp 1s ease 0.7s both"
 People lead. Technology follows. Humanity rises.
 </p>
           <div className="hero-btns" style={{
-            display: "flex", gap: 16, flexWrap: "wrap",
+            display: "flex", gap: 16, flexWrap: "wrap", maxWidth: 325,
             animation: "heroFadeUp 1s ease 0.8s both"
           }}>
             <a href="#systems" className="btn-primary"><span>See What We Build</span></a>
