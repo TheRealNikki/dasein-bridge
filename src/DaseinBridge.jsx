@@ -397,7 +397,10 @@ People lead. Technology follows. Humanity rises.
             <Reveal delay={0.25}>
               <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
                 <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-                  "To forge a transformative bridge between untapped brilliance and established expertise — creating a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies."
+                  Leveraging cutting-edge AI, we build tools that democratize access to valuable, once exclusive resources and services &mdash; unlocking opportunity and empowering the underserved.
+                </p>
+                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+                  At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world.
                 </p>
                 <div className="dm" style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>
                   — Founding Vision, est. 2000
