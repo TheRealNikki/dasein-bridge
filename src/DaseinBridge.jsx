@@ -379,13 +379,15 @@ People lead. Technology follows. Humanity rises.
       <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>Founder &amp; CEO</div>
     </div>
   </div>
-  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>
-    Biomimetic systems engineer — she uses biology to engineer intelligence. Creator of SPL and author of its founding paper. Her work fuses embodied cognitive science with full-stack and systems engineering: agentic design drawn from how living systems actually adapt, not how software conventionally behaves. At Vassar College she built Mind &amp; Embodiment, a self-directed cognitive science major tracing intelligent behavior across biology, language, and philosophy — the enactivist lineage of Brooks, Pfeifer, Varela, and Maturana. That foundation runs straight through SPL.
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> Established Biomimetics Systems Engineer. Cuce uses biology to engineer intelligence. She is the creator of SPL, and the author of its founding, published paper (link just below). Her work fuses embodied cognitive science with <em>full-stack</em> systems engineering: agentic design. Drawn from how living systems actually adapt, not how software conventionally behaves. Seventeen years building in the space within human-centered AI; from robotic integrations and AI-powered medical devices, to agentic systems, XR, and edge.
   </p>
+  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> At Vassar College, she created Mind &amp; Embodiment: a self-directed, cognitive science <em>major</em>, formulating the common principles of intelligent behavior across biology, language, and philosophy, and testing theories of mind through biomimetic agents. Her work traces the enactivist lineage of Arkin, Brooks, Pfeifer, Varela, Maturana, Heidegger, and Wittgenstein, and the evolutionary-biorobotics research of John Long, in whose Vassar Robotics lab she served as a Visiting Scientist. That foundation, found here, runs straight through SPL. </p>
+  
   <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
-    {["NSF Bioengineering Fellow", "NYU Medical College Developer", "MIT-aligned Instructor", "Second City Trained"].map(t => (
+    {["SPL Creator", "Visiting Scientist: Vassar Biology & Robotics Lab", "NSF Bioengineering Fellow", "MIT Summer Session Instructor", "NYU Medical College: AI Medical Devices", "MS Human-AI Interaction, Tufts"].map(t => (
       <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
     ))}
+    <a href="https://share.google/aqnB25OHsBHkEAejM" target="_blank" rel="noopener noreferrer" className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(212,168,83,0.5)", color: "var(--gold)", letterSpacing:0.5, textDecoration: "none" }}>📄 Read the SPL Paper →</a>
   </div>
   <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
     "Human-in-the-loop is structural. Transparency is the foundation."
