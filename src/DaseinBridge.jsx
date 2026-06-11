@@ -308,10 +308,10 @@ export default function DaseinBridge() {
           </div>
           <h1 className="cg hero-title" style={{
             fontSize: "clamp(52px, 7vw, 88px)", fontWeight: 300, lineHeight: 1.1,
-            color: "var(--cream)", maxWidth: 760, marginBottom: 12,
+            color: "var(--amber)", maxWidth: 760, marginBottom: 12,
             animation: "heroFadeUp 1s ease 0.4s both"
           }}>
-            Where <em style={{ color: "var(--sage)", fontWeight: 400 }}>untapped brilliance</em><br />
+            Where <em style={{ color: "var(--deepblue)", fontWeight: 400 }}>untapped brilliance</em><br />
             meets established expertise.
           </h1>
           <p className="dm" style={{
@@ -348,6 +348,14 @@ People lead. Technology follows. Humanity rises.
 
         <WavePattern />
       </section>
+      {/* TILDE — AI belongs to humanity (hero → foundation) */}
+<section style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(94,67,38,0.25) 50%, rgba(12,31,42,0.95) 100%)", padding: "100px 40px" }}>
+  <Reveal>
+    <p className="cg" style={{ fontSize: "clamp(18px, 2.5vw, 28px)", color: "var(--cream)", maxWidth: 860, margin: "0 auto", textAlign: "center", lineHeight: 1.6, fontWeight: 400 }}>
+      "AI belongs to humanity. It must uplift people, strengthen communities, and create new paths for dignity and possibility &mdash; from the most unexpected corners of the world."
+    </p>
+  </Reveal>
+</section>
 
       {/* ═══ MISSION ═══ */}
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(ellipse at 20% 80%, rgba(11,73,29,0.28) 0%, transparent 50%)", pointerEvents: "none"}} />
@@ -395,17 +403,17 @@ People lead. Technology follows. Humanity rises.
 </div>
             </Reveal>
             <Reveal delay={0.25}>
-              <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
-                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-                  Leveraging cutting-edge AI, we build tools that democratize access to valuable, once exclusive resources and services &mdash; unlocking opportunity and empowering the underserved.
-                </p>
-                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-                  At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world.
-                </p>
-                <div className="dm" style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>
-                  — Founding Vision, est. 2000
-                </div>
-              </blockquote>
+       <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
+  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+    Leveraging cutting-edge AI, Dasein builds tools that democratize access to valuable, once-exclusive resources and services &mdash; unlocking opportunity and empowering the underserved.
+  </p>
+  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+    We exist to put capability in the hands of the people who&rsquo;ve been priced out of it. Every system we build is designed to lower a barrier, extend a pathway, or return power to the person who needs it &mdash; and to keep doing so at scale, reaching further with each deployment. This is technology built to serve human direction, not replace it: accountable, transparent, and aimed squarely at lifting communities that existing structures overlook.
+  </p>
+  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+    Built for the long game. Measured not by what it automates, but by who it reaches.
+  </p>
+</blockquote>
               <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 {[
                   { n: "People First~", d: "Always." },
@@ -425,7 +433,7 @@ People lead. Technology follows. Humanity rises.
       </section>
 
       {/* ═══ SYSTEMS ═══ */}
-      <section id="systems" style={{ background: "linear-gradient(180deg, rgba(4,32,20,0.95) 0%, rgba(8,40,38,0.9) 40%, rgba(12,31,42,0.85) 100%", position: "relative", overflow: "hidden", padding: "120px 0" }}>
+      <section id="systems" style={{ background: "linear-gradient(180deg, rgba(4,42,22,0.96) 100%, rgba(8,46,34,0.93) 40%, rgba(6,58,30,0.95) 100%", position: "relative", overflow: "hidden", padding: "120px 0" }}>
         <HexPattern />
         <div className="section-wrap" style={{ position: "relative", zIndex: 1 }}>
           <Reveal>
@@ -547,7 +555,7 @@ People lead. Technology follows. Humanity rises.
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 60% 40%, rgba(42,157,143,0.06) 0%, transparent 55%)", pointerEvents: "none" }} />
         <div className="section-wrap">
           <Reveal>
-            <div className="label">The Co-Founder</div>
+            <div className="label">Co-Founder</div>
             <div className="rule" />
             <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>
               Built by people<br /><em className="gold">who believe it.</em>
@@ -557,8 +565,8 @@ People lead. Technology follows. Humanity rises.
             {[
               {
                 initial: "N", name: "Nickolas Smith", role: "Co-Founder & COO",
-                bio: "Independent researcher and systems architect. Fifteen years building interconnected frameworks from first principles — AI cognition, consciousness architecture, biological grounding, and failure-mode analysis. Creator of CRDL and architect of the biological layer beneath SPL. His work at synthosphere treats a non-institutional path as a method, not a disadvantage.",
-                tags: ["synthosphere Research", "CRDL Framework", "Symbolic Compression", "SPL Bio Architecture"],
+                bio: "Theorist and systems architect. For fifteen years, Smith has built interconnected frameworks from first principles — deriving the structural logic beneath intelligence from biology, cognition, and physics, without institutional scaffolding. In 2020, working factory shifts, he documented the grounding problem, the limbic gap, and the architecture of latent concept-space in AI — years before the field's leading labs converged, independently, on the same questions. The convergence is the credential.", bio2: "He is the creator of CRDL, a falsifiable framework for detecting AI failure modes, built to measure the moment coherence begins to masquerade as authority. Where Dasein's engine learns when to stop thinking, his work maps the layer one cross-section over: grounding, consequence, and the conditions that keep compounded intelligence honest as it scales. Published continuously at Synthosphere, his research treats a non-institutional path not as a disadvantage, but as a method — perception reconstructed from the ground up, without shortcuts.",
+                tags: ["synthosphere Research", "CRDL Framework", "Symbolic Compression", "Rate Variable Dependency"],
                 quote: "The credential is a proxy. The work is the proof."
               }
             ].map((p, i) => (
@@ -579,6 +587,7 @@ People lead. Technology follows. Humanity rises.
                     </div>
                   </div>
                   <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>{p.bio}</p>
+                  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>{p.bio2}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
                     {p.tags.map(t => (
                       <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
@@ -595,10 +604,10 @@ People lead. Technology follows. Humanity rises.
       </section>
 
       {/* ═══ GOLD STRIP ═══ */}
-      <section style={{ background: "var(--gold)", padding: "56px 40px" }}>
+      <section style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(94,67,38,0.25) 50%, rgba(12,31,42,0.95) 100%)", padding: "100px 40px" }}>
         <Reveal>
-          <p className="cg" style={{ fontSize: "clamp(18px, 2.5vw, 28px)", color: "var(--forest)", maxWidth: 860, margin: "0 auto", textAlign: "center", lineHeight: 1.6, fontWeight: 400 }}>
-            "AI belongs to humanity. It must uplift people, strengthen communities, and create new paths for dignity and possibility — from the most unexpected corners of the world."
+          <p className="cg" style={{ fontSize: "clamp(18px, 2.5vw, 28px)", color: "var(--cream)", maxWidth: 860, margin: "0 auto", textAlign: "center", lineHeight: 1.6, fontWeight: 400 }}>
+            "At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world."
           </p>
         </Reveal>
       </section>
