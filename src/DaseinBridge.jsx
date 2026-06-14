@@ -79,7 +79,7 @@ const WavePattern = () => (
 export default function DaseinBridge() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
+const [formSent, setFormSent] = useState(false)
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handler);
@@ -627,31 +627,54 @@ People lead. Technology follows. Humanity rises.
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80 }} className="grid-2">
             <Reveal>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                  <input placeholder="Name" />
-                  <input placeholder="Email" />
-                </div>
-                <select>
-                  <option value="">Topic</option>
-                  <option>General Inquiry</option>
-                  <option>SPL Deployment</option>
-                  <option>Partnership</option>
-                  <option>Ethics Review</option>
-                  <option>Learning Tools</option>
-                </select>
-                <textarea placeholder="Tell us about your project, timeline, and what success looks like..." rows={6} style={{ resize: "vertical" }} />
-                <div>
-                  <button className="btn-primary"><span>Send Message</span></button>
-                </div>
-              </div>
+     {formSent ? (
+  <div style={{ padding: "48px 0", textAlign: "center" }}>
+    <div className="cg" style={{ fontSize: 28, color: "var(--sage)", marginBottom: 12 }}>Thank you.</div>
+    <p className="dm" style={{ fontSize: 15, color: "var(--muted)", lineHeight: 1.8 }}>
+      Your message reached us. We respond within 2 business days.
+    </p>
+  </div>
+) : (
+  <form
+    action="https://formspree.io/f/maqzaqka"
+    method="POST"
+    onSubmit={async (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      await fetch("https://formspree.io/f/maqzaqka", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      setFormSent(true);
+    }}
+    style={{ display: "flex", flexDirection: "column", gap: 16 }}
+  >
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <input name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+    </div>
+    <select name="topic">
+      <option value="">Topic</option>
+      <option>General Inquiry</option>
+      <option>SPL Deployment</option>
+      <option>Partnership</option>
+      <option>Ethics Review</option>
+      <option>Learning Tools</option>
+    </select>
+    <textarea name="message" placeholder="Tell us about your project, timeline, and what success looks like..." rows={6} style={{ resize: "vertical" }} required />
+    <div>
+      <button type="submit" className="btn-primary"><span>Send Message</span></button>
+    </div>
+  </form>
+)}
             </Reveal>
             <Reveal delay={0.2}>
               <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                 {[
                   { label: "General", email: "general@dasein.works" },
                   { label: "Founder", email: "P.Cuce@dasein.works" },
-                  { label: "Co-Founder", email: "N.Smith@dasein.works" }
+                  { label: "Co-Founder", email: "NickSmith@dasein.works" }
                 ].map((c, i) => (
                   <div key={c.label} style={{ padding: "24px 0", borderBottom: "1px solid rgba(42,157,143,0.12)" }}>
                     <div className="label" style={{ marginBottom: 4 }}>{c.label}</div>
