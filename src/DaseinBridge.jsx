@@ -80,6 +80,7 @@ export default function DaseinBridge() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 const [formSent, setFormSent] = useState(false)
+const [openPrinciple, setOpenPrinciple] = useState(null);
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handler);
@@ -88,6 +89,7 @@ const [formSent, setFormSent] = useState(false)
 
   const navItems = [
     { id: "mission", label: "Mission" },
+    { id: "principles", label: "Principles" },
     { id: "systems", label: "Systems" },
     { id: "services", label: "Services" },
     { id: "team", label: "Team" },
@@ -431,7 +433,55 @@ People lead. Technology follows. Humanity rises.
           </div>
         </div>
       </section>
-
+{/* ═══ PRINCIPLES ═══ */}
+<section id="principles" style={{ position: "relative", overflow: "hidden", padding: "120px 0" }}>
+<div className="section-wrap">
+<Reveal>
+<div className="label">What Guides Us</div>
+<div className="rule" />
+<h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>The Principles</h2>
+<p className="dm" style={{ fontSize: 15, color: "var(--muted)", maxWidth: 560, margin: "0 auto 64px", lineHeight: 1.8, textAlign: "center" }}>
+The commitments every system we build operates inside &mdash; the rubric the work is measured against.
+</p>
+</Reveal>
+<div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-2">
+{[
+{ slug: "human-leadership", num: "01", title: "Human Leadership", tagline: "Every system begins with human intention.", punch: "People lead. Technology follows.", preview: "Direction, judgment, and values come from people, not from the model. AI operates as support and an extension of human capability, never a replacement for the person holding the decision." },
+{ slug: "shared-uplift", num: "02", title: "Shared Uplift", tagline: "Intelligence exists to raise the quality of life for every community.", punch: "Growth for all, with every group rising together.", preview: "A tool that concentrates advantage in the hands that already hold it isn't progress. We build for the opposite: systems where the benefit lands wide and people gain ground together." },
+{ slug: "care-for-people-and-data", num: "03", title: "Care for People & Data", tagline: "Information is treated with respect.", punch: "", preview: "Data about a person is a piece of that person, and we handle it that way. Collection stays minimal, protection stays constant, and control stays with the individual it belongs to." },
+{ slug: "responsible-intelligence", num: "04", title: "Responsible Intelligence for the Future", tagline: "AI should move humanity forward with stability and purpose.", punch: "Built for the long game, since day one.", preview: "Capability without reliability is a liability. We build systems that behave predictably and hold up under real-world conditions, including the low-resource, high-pressure cases where most systems quietly fail." },
+{ slug: "equity-and-fairness", num: "05", title: "Equity & Fairness", tagline: "Designed with attention to every community, not just the default one.", punch: "", preview: "Systems trained on a narrow slice of the world behave well for that slice and poorly for everyone else. We design against that, measuring behavior across conditions, environments, and people." },
+{ slug: "transparency", num: "06", title: "Transparency", tagline: "When a system acts, people should see how, and know when AI is involved.", punch: "", preview: "When intelligence operates in the dark, trust becomes a leap of faith. We don't ask for that leap. Every person can see when AI is present, what it does, and the boundaries that constrain it." },
+{ slug: "accountability", num: "07", title: "Accountability", tagline: "We hold responsibility for what our systems do.", punch: "", preview: "A system that no one answers for is designed to escape consequences. We reject that. Every layer of our process carries accountability, with clear response plans when something needs correcting." },
+{ slug: "open-access", num: "08", title: "Open Access & Public Benefit", tagline: "Technology should elevate people and bridge gaps, not widen them.", punch: "No barriers to brilliance.", preview: "Talent is everywhere; the structures that recognize it are not. Faced with a closed advantage or a shared one, we build the shared one. Every obstacle we take down opens a path for someone already good enough." },
+{ slug: "global-ethics", num: "09", title: "Global Ethics & International Respect", tagline: "Systems must serve humanity across borders, languages, and conditions.", punch: "", preview: "The people we serve reach across cultures and continents, and a tool that only works for one context isn't finished. We honor diverse values and build for the languages, infrastructures, and norms real deployment meets." },
+{ slug: "people-first", num: "10", title: "People First", tagline: "Always.", punch: "People first. Always.", preview: "Before the architecture, before the model, before the deployment, the person. Every decision runs through one filter first: does this serve the people on the other end of it? When that competes with speed or cost, the person wins." }
+].map((p, i) => {
+const isOpen = openPrinciple === i;
+return (
+<Reveal key={p.slug} delay={0.05 * (i % 2)}>
+<div
+onClick={() => setOpenPrinciple(isOpen ? null : i)}
+className="card-dark"
+style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
+>
+<div className="cg" style={{ fontSize: 36, color: "rgba(42,157,143,0.18)", fontWeight: 700, lineHeight: 1, marginBottom: 12 }}>{p.num}</div>
+<h3 className="cg" style={{ fontSize: 22, fontWeight: 400, color: "var(--cream)", marginBottom: 10 }}>{p.title}</h3>
+<p className="cg" style={{ fontSize: 16, fontStyle: "italic", color: "var(--sage)", lineHeight: 1.5, marginBottom: p.punch ? 12 : 0 }}>{p.tagline}</p>
+{p.punch && (
+<p className="dm" style={{ fontSize: 13, letterSpacing: 0.5, color: "var(--gold)", marginBottom: 0 }}>{p.punch}</p>
+)}
+<div style={{ maxHeight: isOpen ? 240 : 0, overflow: "hidden", transition: "max-height 0.45s cubic-bezier(.16,1,.3,1)" }}>
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.8, color: "var(--muted)", marginTop: 20 }}>{p.preview}&hellip;</p>
+<a href={`/principles/${p.slug}`} onClick={(e) => e.stopPropagation()} className="dm" style={{ display: "inline-block", fontSize: 12, letterSpacing: 1, color: "var(--bright)", marginTop: 12, textDecoration: "none" }}>Read more &rarr;</a>
+</div>
+</div>
+</Reveal>
+);
+})}
+</div>
+</div>
+</section>
       {/* ═══ SYSTEMS ═══ */}
       <section id="systems" style={{ background: "linear-gradient(180deg, rgba(4,42,22,0.96) 100%, rgba(8,46,34,0.93) 40%, rgba(6,58,30,0.95) 100%", position: "relative", overflow: "hidden", padding: "120px 0" }}>
         <HexPattern />
@@ -525,10 +575,10 @@ People lead. Technology follows. Humanity rises.
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }} className="grid-2">
             {[
-              { num: "01", title: "Human-Aligned System Design", desc: "Guidance for teams building intelligence that respects people, culture, and lived experience. We help create structures that follow human direction with steady, accountable behavior." },
-              { num: "02", title: "Community-Focused Digital Tools", desc: "Support for initiatives serving public needs, social programs, and learning ecosystems. We help shape tools that expand access and strengthen social impact." },
-              { num: "03", title: "Learning & Skill-Growth Pathways", desc: "Support for education groups and early learners who want simple entry into programming, digital capability, and AI foundations. Confidence and growth, not gatekeeping." },
-              { num: "04", title: "Ethical Review & Alignment", desc: "Commitment-driven evaluation for teams shaping responsible AI systems. Transparency, balanced behavior, and clarity in real-world deployment." }
+{ num: "01", title: "Human-Aligned System Design", desc: "Intelligence that follows human direction by design, not by patch. We help teams build systems that stay accountable to the person directing them, behave consistently under pressure, and earn trust because it was built into the architecture from the start — shaping where the human stays in the loop, where the system defers, and how accountability is enforced rather than promised." },
+{ num: "02", title: "Community-Focused Digital Tools", desc: "Tools built for the people existing structures overlook. We support initiatives serving social programs, public needs, and learning ecosystems — meeting an organization where it actually is: lean, resource-conscious, and answerable to the people it serves. We design tools that lower a barrier, extend a pathway, or return capability to the people who need it, and keep doing so as the work scales." },
+{ num: "03", title: "Learning & Skill Growth Pathways", desc: "Meet people where they are. Carry them further. We build learning systems that hold the whole route — from \"doesn't know yet\" to \"does\" — structured around where a person actually begins. This is the principle behind tools like WeeksWorth: free for the learners and communities who use it, paced to the person, meeting the early steps that usually go unsupported and staying with the learner the whole way up." },
+{ num: "04", title: "Ethical Review & Alignment", desc: "Commitment-driven evaluation for teams shaping responsible AI. We provide structured review for teams deploying AI into the real world — surfacing where a system's behavior drifts from its stated commitments, where transparency breaks down, and where accountability needs enforcing before deployment, not after harm. The standard is simple: human-in-the-loop is structural, not optional." },
             ].map((s, i) => (
               <Reveal key={i} delay={0.1 * i}>
                 <div style={{
@@ -673,7 +723,7 @@ People lead. Technology follows. Humanity rises.
               <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                 {[
                   { label: "General", email: "general@dasein.works" },
-                  { label: "Founder", email: "P.Cuce@dasein.works" },
+                  { label: "Founder", email: "Pamela@dasein.works" },
                   { label: "Co-Founder", email: "NickSmith@dasein.works" }
                 ].map((c, i) => (
                   <div key={c.label} style={{ padding: "24px 0", borderBottom: "1px solid rgba(42,157,143,0.12)" }}>
