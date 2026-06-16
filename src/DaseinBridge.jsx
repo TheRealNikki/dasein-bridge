@@ -76,7 +76,7 @@ const WavePattern = () => (
   </svg>
 );
 
-export default function DaseinBridge() {
+export default function DaseinWorks() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 const [formSent, setFormSent] = useState(false)
@@ -520,7 +520,7 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
                       </div>
                     ))}
                   </div>
-                  <a href="#contact" className="btn-primary"><span>Deploy SPL</span></a>
+<a href="https://spl-demo.vercel.app/" className="btn-primary" target="_blank" rel="noopener noreferrer"><span>Deploy SPL</span></a>
                 </div>
                 <div style={{ textAlign: "right" }}>
                   <div className="cg" style={{ fontSize: 120, color: "rgba(42,157,143,0.08)", fontWeight: 700, lineHeight: 1, userSelect: "none" }}>SPL</div>
@@ -750,11 +750,11 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
       {/* FOOTER */}
       <footer style={{ background: "var(--forest)", borderTop: "1px solid rgba(42,157,143,0.1)", padding: "48px 40px" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
-          <div className="cg" style={{ fontSize: 22 }}>Dasein<span className="gold" style={{ fontStyle: "italic" }}>Bridge</span></div>
+          <div className="cg" style={{ fontSize: 22 }}>Dasein<span className="gold" style={{ fontStyle: "italic" }}>Works</span></div>
           <div className="dm" style={{ fontSize: 12, color: "var(--muted)", letterSpacing: 1, textAlign: "center" }}>
             Making accountable automation standard for civic, public, and responsible builders.
           </div>
-          <div className="dm" style={{ fontSize: 12, color: "var(--muted)" }}>© 2026 DaseinBridge</div>
+          <div className="dm" style={{ fontSize: 12, color: "var(--muted)" }}>© 2026 DaseinWorks</div>
         </div>
       </footer>
     </div>
