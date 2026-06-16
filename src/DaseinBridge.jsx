@@ -246,7 +246,7 @@ const [openPrinciple, setOpenPrinciple] = useState(null);
       }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
           <a href="#" className="cg" style={{ fontSize: 24, fontWeight: 600, letterSpacing: 0.5 }}>
-            Dasein<span className="gold" style={{ fontStyle: "italic" }}>Bridge</span>
+            Dasein<span className="gold" style={{ fontStyle: "italic" }}>Works</span>
           </a>
           <div className="dm nav-links" style={{ display: "flex", gap: 40, alignItems: "center" }}>
             {navItems.map(n => (
