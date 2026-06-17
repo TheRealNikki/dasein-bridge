@@ -541,10 +541,11 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-3">
             {[
-              { tag: "Coming Soon", title: "WeeksWorth", desc: "Enter any job title. Get a complete learning roadmap — modules, free resources, capstone project. No gatekeeping. No sign-up." },
-              { tag: "In Development", title: "Couria", desc: "Coordinate across every timezone without the mental math. Couria knows each contact's hours, drafts your message, and releases it when it'll land right - so no one ever gets pinged at 3 AM." },
-              { tag: "In Development", title: "eDrop", desc: "Audits how your software is built and surfaces the hidden waste — the energy-hungry patterns most teams never see. Lighter code, faster loads, a smaller carbon footprint at range and scale." }
-            ].map((item, i) => (
+  { tag: "In Development", title: "WeeksWorth", desc: "Enter any job title. Get a complete learning roadmap — modules, free resources, capstone project. No gatekeeping. No sign-up." },
+  { tag: "In Development", title: "Polyglide", desc: "Translate code across front-end, back-end, and full-stack — including whole-stack conversions. Built for builders who can't afford to learn every language. Write in what you know; ship in what you need." },
+  { tag: "In Development", title: "eDrop", desc: "Audits how your software is built and surfaces the hidden waste — the energy-hungry patterns most teams never see. Lighter code, faster loads, a smaller carbon footprint at range and scale." },
+  { tag: "In Development", title: "Couria", desc: "Coordinate across every timezone without the mental math. Couria knows each contact's hours, drafts your message, and releases it when it'll land right — so no one ever gets pinged at 3 AM." }
+].map((item, i) => (
               <Reveal key={i} delay={0.1 * (i + 1)}>
                 <div className="card-dark" style={{ padding: "36px 28px", height: "100%" }}>
                   <div className="label" style={{ marginBottom: 16 }}>{item.tag}</div>
