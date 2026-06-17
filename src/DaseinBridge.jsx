@@ -308,14 +308,12 @@ const [openPrinciple, setOpenPrinciple] = useState(null);
           <div className="dm label" style={{ animation: "heroFadeUp 1s ease 0.2s both" }}>
             Directed By Humans · Accountable Infrastructure · AI Reimagined
           </div>
-          <div className="dm" style={{
-  position: "absolute",
-  right: "40px",
-  top: "140px",
+ <div className="dm" style={{
   fontSize: 13,
   fontStyle: "italic",
   color: "var(--muted)",
   letterSpacing: 1,
+  marginTop: 8,
   animation: "heroFadeUp 1s ease 0.3s both"
 }}>
   (website under construction)
