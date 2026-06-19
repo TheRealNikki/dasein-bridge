@@ -345,7 +345,7 @@ People lead. Technology follows. Humanity rises.
             animation: "heroFadeUp 1s ease 0.8s both"
           }}>
             <a href="#systems" className="btn-primary"><span>See What We Build</span></a>
-            <a href="#mission" className="btn-ghost">Our Mission</a>
+            <a href="#our-mission" className="btn-ghost">Our Mission</a>
           </div>
 
           <div style={{ marginTop: 80, display: "flex", gap: 48, flexWrap: "wrap", animation: "heroFadeUp 1s ease 1s both" }}>
@@ -665,7 +665,7 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
       </section>
 
       {/* ═══ GOLD STRIP ═══ */}
-      <section style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(94,67,38,0.25) 50%, rgba(12,31,42,0.95) 100%)", padding: "100px 40px" }}>
+      <section id="our-mission" style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(94,67,38,0.25) 50%, rgba(12,31,42,0.95) 100%)", padding: "100px 40px" }}>
         <Reveal>
           <p className="cg" style={{ fontSize: "clamp(18px, 2.5vw, 28px)", color: "var(--cream)", maxWidth: 860, margin: "0 auto", textAlign: "center", lineHeight: 1.6, fontWeight: 400 }}>
             "At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world."
