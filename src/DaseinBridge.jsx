@@ -88,11 +88,10 @@ const [openPrinciple, setOpenPrinciple] = useState(null);
   }, []);
 
   const navItems = [
+    { id: "services", label: "Services" },
     { id: "mission", label: "Mission" },
     { id: "principles", label: "Principles" },
     { id: "systems", label: "Systems" },
-    { id: "services", label: "Services" },
-    { id: "team", label: "Team" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -232,7 +231,6 @@ const [openPrinciple, setOpenPrinciple] = useState(null);
           .grid-2, .grid-3, .team-grid { grid-template-columns: 1fr !important; }
           .hero-btns { flex-direction: column; align-items: center; }
           .nav-links { display: none !important; }
-
         }
       `}</style>
 
@@ -345,7 +343,7 @@ People lead. Technology follows. Humanity rises.
             animation: "heroFadeUp 1s ease 0.8s both"
           }}>
             <a href="#systems" className="btn-primary"><span>See What We Build</span></a>
-            <a href="#our-mission" className="btn-ghost">Our Mission</a>
+            <a href="#mission" className="btn-ghost">Our Mission</a>
           </div>
 
           <div style={{ marginTop: 80, display: "flex", gap: 48, flexWrap: "wrap", animation: "heroFadeUp 1s ease 1s both" }}>
@@ -369,78 +367,171 @@ People lead. Technology follows. Humanity rises.
   </Reveal>
 </section>
 
-      {/* ═══ MISSION ═══ */}
+      {/* ═══ SERVICES ═══ (moved up: first page after hero) */}
+      <section id="services" style={{ background: "transparent", padding: "120px 0", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 70%, rgba(212,168,83,0.04) 0%, transparent 50%)", pointerEvents: "none" }} />
+        <div className="section-wrap">
+          <Reveal>
+            <div className="label">How We Work With You</div>
+            <div className="rule" />
+            <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>Services</h2>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }} className="grid-2">
+            {[
+{ num: "01", title: "Human-Aligned System Design", desc: "Intelligence that follows human direction by design, not by patch. We help teams build systems that stay accountable to the person directing them, behave consistently under pressure, and earn trust because it was built into the architecture from the start — shaping where the human stays in the loop, where the system defers, and how accountability is enforced rather than promised." },
+{ num: "02", title: "Community-Focused Digital Tools", desc: "Tools built for the people existing structures overlook. We support initiatives serving social programs, public needs, and learning ecosystems — meeting an organization where it actually is: lean, resource-conscious, and answerable to the people it serves. We design tools that lower a barrier, extend a pathway, or return capability to the people who need it, and keep doing so as the work scales." },
+{ num: "03", title: "Learning & Skill Growth Pathways", desc: "Meet people where they are. Carry them further. We build learning systems that hold the whole route — from \"doesn't know yet\" to \"does\" — structured around where a person actually begins. This is the principle behind tools like WeeksWorth: free for the learners and communities who use it, paced to the person, meeting the early steps that usually go unsupported and staying with the learner the whole way up." },
+{ num: "04", title: "Ethical Review & Alignment", desc: "Commitment-driven evaluation for teams shaping responsible AI. We provide structured review for teams deploying AI into the real world — surfacing where a system's behavior drifts from its stated commitments, where transparency breaks down, and where accountability needs enforcing before deployment, not after harm. The standard is simple: human-in-the-loop is structural, not optional." },
+            ].map((s, i) => (
+              <Reveal key={i} delay={0.1 * i}>
+                <div style={{
+                  padding: "48px 40px", background: "rgba(10,26,24,0.6)",
+                  borderBottom: "1px solid rgba(42,157,143,0.1)",
+                  borderRight: i % 2 === 0 ? "1px solid rgba(42,157,143,0.1)" : "none",
+                  transition: "background 0.4s"
+                }}
+                  onMouseEnter={e => e.currentTarget.style.background = "rgba(26,74,64,0.4)"}
+                  onMouseLeave={e => e.currentTarget.style.background = "rgba(10,26,24,0.6)"}
+                >
+                  <div className="cg" style={{ fontSize: 48, color: "rgba(42,157,143,0.15)", fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>{s.num}</div>
+                  <h3 className="cg" style={{ fontSize: 22, fontWeight: 400, color: "var(--cream)", marginBottom: 16 }}>{s.title}</h3>
+                  <p className="dm" style={{ fontSize: 14, lineHeight: 1.8, color: "var(--muted)" }}>{s.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ MISSION / FOUNDATION ═══ */}
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(ellipse at 20% 80%, rgba(11,73,29,0.28) 0%, transparent 50%)", pointerEvents: "none"}} />
       <section id="mission" style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(11,40,45,0.92) 45%, rgba(9,52,38,0.92) 72%, rgba(6,58,30,0.95) 100%)", position: "relative", overflow: "hidden", padding: "120px 0" }}>
         <div className="section-wrap">
           <Reveal>
             <div className="label">Our Foundation</div>
             <div className="rule" />
+            <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.2, color: "var(--cream)", marginBottom: 24, maxWidth: 720 }}>
+              Intelligence shaped <em className="gold">by people,</em> for humanity.
+            </h2>
+            <p className="dm" style={{ fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 20, maxWidth: 620 }}>
+              Our systems follow the direction of the communities we serve, carving paths that belong to the members themselves.
+            </p>
+            <div className="dm" style={{ fontSize: 13, letterSpacing: 1, color: "var(--sage)", textTransform: "uppercase", marginBottom: 72 }}>
+              Context → Structure → Outcome
+            </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }} className="grid-2">
-            <Reveal delay={0.1}>
-              <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.2, color: "var(--cream)", marginBottom: 32 }}>
-                Intelligence shaped<br /><em className="gold">by people,</em><br />for humanity.
-              </h2>
-              <p className="dm" style={{ fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 24 }}>
-                Our systems follow the direction of the communities we serve, carving paths that belong to the members themselves.
-              </p>
-              <div className="dm" style={{ fontSize: 13, letterSpacing: 1, color: "var(--sage)", textTransform: "uppercase" }}>
-                Context → Structure → Outcome
-              </div>
-              {/* FOUNDER CARD (Pam) — moved up from Team */}
-<div style={{ background: "rgba(15,36,32,0.5)", border: "1px solid rgba(42,157,143,0.15)", padding: "40px 36px", marginTop: 48 }}>
-  <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
-    <div style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, var(--teal), var(--bright))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(212,168,83,0.3)" }}>
-      <span className="cg" style={{ fontSize: 24, fontWeight: 600, color: "var(--cream)" }}>P</span>
-    </div>
-    <div>
-      <div className="cg" style={{ fontSize: 22, color: "var(--cream)" }}>Pamela Cuce</div>
-      <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>Founder &amp; CEO</div>
-    </div>
-  </div>
-<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> Established Biomimetics Systems Engineer. Cuce uses biology to engineer intelligence. She is the creator of SPL, and the author of its founding, published paper (link just below). Her work fuses embodied cognitive science with <em>full-stack</em> systems engineering: agentic design. Drawn from how living systems actually adapt, not how software conventionally behaves. Seventeen years building in the space within human-centered AI; from robotic integrations and AI-powered medical devices, to agentic systems, XR, and edge.
-  </p>
-  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> At Vassar College, she created Mind &amp; Embodiment: a self-directed, cognitive science <em>major</em>, formulating the common principles of intelligent behavior across biology, language, and philosophy, and testing theories of mind through biomimetic agents. Her work traces the enactivist lineage of Arkin, Brooks, Pfeifer, Varela, Maturana, Heidegger, and Wittgenstein, and the evolutionary-biorobotics research of John Long, in whose Vassar Robotics lab she served as a Visiting Scientist. That foundation, found here, runs straight through SPL. </p>
-  
-  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
-    {["SPL Creator", "Visiting Scientist: Vassar Biology & Robotics Lab", "NSF Bioengineering Fellow", "MIT Summer Session Instructor", "NYU Medical College: AI Medical Devices", "MS Human-AI Interaction, Tufts"].map(t => (
-      <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
-    ))}
-    <a href="https://share.google/aqnB25OHsBHkEAejM" target="_blank" rel="noopener noreferrer" className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(212,168,83,0.5)", color: "var(--gold)", letterSpacing:0.5, textDecoration: "none" }}>📄 Read the SPL Paper →</a>
-  </div>
-  <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
-    "Human-in-the-loop is structural. Transparency is the foundation."
-  </blockquote>
-</div>
-            </Reveal>
-            <Reveal delay={0.25}>
-       <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
-  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-    Leveraging cutting-edge AI, Dasein builds tools that democratize access to valuable, once-exclusive resources and services &mdash; unlocking opportunity and empowering the underserved.
-  </p>
-  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-    We exist to put capability in the hands of the people who&rsquo;ve been priced out of it. Every system we build is designed to lower a barrier, extend a pathway, or return power to the person who needs it &mdash; and to keep doing so at scale, reaching further with each deployment. This is technology built to serve human direction, not replace it: accountable, transparent, and aimed squarely at lifting communities that existing structures overlook.
-  </p>
-  <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
-    Built for the long game. Measured not by what it automates, but by who it reaches.
-  </p>
-</blockquote>
-              <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                {[
-                  { n: "People First~", d: "Always." },
-                  { n: "~No Barriers", d: "To brilliance." },
-                  { n: "Real Trust~", d: "Not a feature." },
-                  { n: "~Long Game", d: "Since Day One." }
-                ].map(item => (
-                  <div key={item.n} style={{ padding: "20px", background: "rgba(42,157,143,0.06)", borderTop: "1px solid rgba(42,157,143,0.2)" }}>
-                    <div className="cg" style={{ fontSize: 17, color: "var(--cream)", fontWeight: 600 }}>{item.n}</div>
-                    <div className="dm" style={{ fontSize: 13, color: "var(--muted)" }}>{item.d}</div>
+
+          {/* SPL FLAGSHIP BLOCK — moved up from Systems */}
+          <Reveal delay={0.1}>
+            <div style={{
+              background: "linear-gradient(135deg, rgba(11, 73, 29, 0.66) 8%, rgba(11, 27, 60, 0.8) 92%)",
+              border: "1px solid rgba(28, 101, 189, 0.38)",
+              padding: "56px 48px", marginBottom: 72, position: "relative", overflow: "hidden"
+            }}>
+              <div style={{ position: "absolute", top: 0, right: 0, width: 300, height: 300, background: "radial-gradient(circle at center, rgba(42,157,143,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
+              <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "start" }} className="grid-2">
+                <div>
+                  <div className="dm label" style={{ marginBottom: 16 }}>Flagship Framework</div>
+                  <h3 className="cg" style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 400, color: "var(--cream)", marginBottom: 20 }}>
+                    Subsumption Pattern Learning
+                  </h3>
+                  <p className="dm" style={{ fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 32, maxWidth: 520 }}>
+                    A self-distilling swarm intelligence — inspired by termite colonies and honeybee waggle dances — that converts expensive LLM deliberation into rapid, cheap reflexes. Gets smarter and cheaper with every deployment. Documented 10–50x cost reduction.
+                  </p>
+                  <div style={{ display: "flex", gap: 40, flexWrap: "wrap", marginBottom: 32 }}>
+                    {[["13.9x", "Cost Reduction"], ["5.5%", "Reach Layer 2"], ["<5-15ms", "Layer 1 Response"]].map(([n, l]) => (
+                      <div key={l}>
+                        <div className="cg" style={{ fontSize: 36, fontWeight: 600, color: "var(--sage)" , marginBottom: 10}}>{n}</div>
+                        <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>{l}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+<a href="https://spl-demo.vercel.app/" className="btn-primary" target="_blank" rel="noopener noreferrer"><span>Deploy SPL</span></a>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div className="cg" style={{ fontSize: 120, color: "rgba(42,157,143,0.08)", fontWeight: 700, lineHeight: 1, userSelect: "none" }}>SPL</div>
+                </div>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
+
+          {/* FOUNDERS — bios side by side (Pam left / Nick right); stacks Pam-over-Nick on mobile */}
+          <Reveal delay={0.1}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 0 }} className="grid-2">
+              {/* Pam */}
+              <div style={{ background: "rgba(15,36,32,0.5)", border: "1px solid rgba(42,157,143,0.15)", padding: "40px 36px", height: "100%" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
+                  <div style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, var(--teal), var(--bright))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(212,168,83,0.3)" }}>
+                    <span className="cg" style={{ fontSize: 24, fontWeight: 600, color: "var(--cream)" }}>P</span>
+                  </div>
+                  <div>
+                    <div className="cg" style={{ fontSize: 22, color: "var(--cream)" }}>Pamela Cuce</div>
+                    <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>Founder &amp; CEO</div>
+                  </div>
+                </div>
+                <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> Established Biomimetics Systems Engineer. Cuce uses biology to engineer intelligence. She is the creator of SPL, and the author of its founding, published paper (link just below). Her work fuses embodied cognitive science with <em>full-stack</em> systems engineering: agentic design. Drawn from how living systems actually adapt, not how software conventionally behaves. Seventeen years building in the space within human-centered AI; from robotic integrations and AI-powered medical devices, to agentic systems, XR, and edge.
+                </p>
+                <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}> At Vassar College, she created Mind &amp; Embodiment: a self-directed, cognitive science <em>major</em>, formulating the common principles of intelligent behavior across biology, language, and philosophy, and testing theories of mind through biomimetic agents. Her work traces the enactivist lineage of Arkin, Brooks, Pfeifer, Varela, Maturana, Heidegger, and Wittgenstein, and the evolutionary-biorobotics research of John Long, in whose Vassar Robotics lab she served as a Visiting Scientist. That foundation, found here, runs straight through SPL. </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+                  {["SPL Creator", "Visiting Scientist: Vassar Biology & Robotics Lab", "NSF Bioengineering Fellow", "MIT Summer Session Instructor", "NYU Medical College: AI Medical Devices", "MS Human-AI Interaction, Tufts"].map(t => (
+                    <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
+                  ))}
+                  <a href="https://share.google/aqnB25OHsBHkEAejM" target="_blank" rel="noopener noreferrer" className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(212,168,83,0.5)", color: "var(--gold)", letterSpacing:0.5, textDecoration: "none" }}>📄 Read the SPL Paper →</a>
+                </div>
+                <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
+                  "Human-in-the-loop is structural. Transparency is the foundation."
+                </blockquote>
+              </div>
+              {/* Nick */}
+              <div style={{ background: "rgba(15,36,32,0.5)", border: "1px solid rgba(42,157,143,0.15)", padding: "40px 36px", height: "100%" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
+                  <div style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, var(--teal), var(--bright))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(212,168,83,0.3)" }}>
+                    <span className="cg" style={{ fontSize: 24, fontWeight: 600, color: "var(--cream)" }}>N</span>
+                  </div>
+                  <div>
+                    <div className="cg" style={{ fontSize: 22, color: "var(--cream)" }}>Nickolas Smith</div>
+                    <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>Co-Founder &amp; COO</div>
+                  </div>
+                </div>
+                <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>Theorist and systems architect. For fifteen years, Smith has built interconnected frameworks from first principles — deriving the structural logic beneath intelligence from biology, cognition, and physics, without institutional scaffolding. In 2020, working factory shifts, he documented the grounding problem, the limbic gap, and the architecture of latent concept-space in AI — years before the field's leading labs converged, independently, on the same questions. The convergence is the credential.</p>
+                <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>His work sits one layer beneath where the field tends to look. Where an engine learns when to stop reasoning, his research maps the cross-section next to it: grounding, consequence, and the structural conditions that keep compounded intelligence honest as it scales. Across distributed systems, organizational design, and AI architecture, he traces a single recurring failure — premature convergence, where a system resolves faster than its material can integrate — and the markers that make it measurable. The throughline is a conviction that intelligence is defined not by perpetual reasoning, but by knowing when reasoning can safely give way to reflex, and what has to hold for that handoff to be trustworthy.</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+                  {["Systems Theory", "Distributed Intelligence", "AI Architecture", "First-Principles Design"].map(t => (
+                    <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
+                  ))}
+                </div>
+                <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
+                  "The credential is a proxy. The work is the proof."
+                </blockquote>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* MISSION-BRIDGE LINE — placeholder, to be written (mission is the driver, consulting is the engine) */}
+          <Reveal delay={0.1}>
+            <div style={{ borderTop: "1px solid rgba(42,157,143,0.2)", marginTop: 40, paddingTop: 48, maxWidth: 860 }}>
+              <p className="cg" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: 1.6, color: "var(--cream)", fontStyle: "italic" }}>
+                The mission leads. The work that funds it follows — every build we take on feeds the tools we give away.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* VALUE TILES — closing band */}
+          <Reveal delay={0.15}>
+            <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-2">
+              {[
+                { n: "People First~", d: "Always." },
+                { n: "~No Barriers", d: "To brilliance." },
+                { n: "Real Trust~", d: "Not a feature." },
+                { n: "~Long Game", d: "Since Day One." }
+              ].map(item => (
+                <div key={item.n} style={{ padding: "20px", background: "rgba(42,157,143,0.06)", borderTop: "1px solid rgba(42,157,143,0.2)" }}>
+                  <div className="cg" style={{ fontSize: 17, color: "var(--cream)", fontWeight: 600 }}>{item.n}</div>
+                  <div className="dm" style={{ fontSize: 13, color: "var(--muted)" }}>{item.d}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 {/* ═══ PRINCIPLES ═══ */}
@@ -504,47 +595,12 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
               Every tool we build removes a barrier, extends a pathway, or hands power back to the person who needs it.
             </p>
           </Reveal>
-  
-          {/* SPL Feature Card */}
-          <Reveal delay={0.1}>
-            <div style={{
-              background: "linear-gradient(135deg, rgba(11, 73, 29, 0.66) 8%, rgba(11, 27, 60, 0.8) 92%)",
-              border: "1px solid rgba(28, 101, 189, 0.38)",
-              padding: "56px 48px", marginBottom: 24, position: "relative", overflow: "hidden"
-            }}>
-              <div style={{ position: "absolute", top: 0, right: 0, width: 300, height: 300, background: "radial-gradient(circle at center, rgba(42,157,143,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "start" }} className="grid-2">
-                <div>
-                  <div className="dm label" style={{ marginBottom: 16 }}>Flagship Framework</div>
-                  <h3 className="cg" style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 400, color: "var(--cream)", marginBottom: 20 }}>
-                    Subsumption Pattern Learning
-                  </h3>
-                  <p className="dm" style={{ fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 32, maxWidth: 520 }}>
-                    A self-distilling swarm intelligence — inspired by termite colonies and honeybee waggle dances — that converts expensive LLM deliberation into rapid, cheap reflexes. Gets smarter and cheaper with every deployment. Documented 10–50x cost reduction.
-                  </p>
-                  <div style={{ display: "flex", gap: 40, flexWrap: "wrap", marginBottom: 32 }}>
-                    {[["13.9x", "Cost Reduction"], ["5.5%", "Reach Layer 2"], ["<5-15ms", "Layer 1 Response"]].map(([n, l]) => (
-                      <div key={l}>
-                        <div className="cg" style={{ fontSize: 36, fontWeight: 600, color: "var(--sage)" , marginBottom: 10}}>{n}</div>
-                        <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}>{l}</div>
-                      </div>
-                    ))}
-                  </div>
-<a href="https://spl-demo.vercel.app/" className="btn-primary" target="_blank" rel="noopener noreferrer"><span>Deploy SPL</span></a>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <div className="cg" style={{ fontSize: 120, color: "rgba(42,157,143,0.08)", fontWeight: 700, lineHeight: 1, userSelect: "none" }}>SPL</div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-3">
             {[
   { tag: "In Development", title: "WeeksWorth", desc: "Enter any job title. Get a complete learning roadmap — modules, free resources, capstone project. No gatekeeping. No sign-up." },
   { tag: "In Development", title: "Polyglide", desc: "Translate code across front-end, back-end, and full-stack — including whole-stack conversions. Built for builders who can't afford to learn every language. Write in what you know; ship in what you need." },
-  { tag: "In Development", title: "eDrop", desc: "Audits how your software is built and surfaces the hidden waste — the energy-hungry patterns most teams never see. Lighter code, faster loads, a smaller carbon footprint at range and scale." },
-  { tag: "In Development", title: "Couria", desc: "Coordinate across every timezone without the mental math. Couria knows each contact's hours, drafts your message, and releases it when it'll land right — so no one ever gets pinged at 3 AM." }
+  { tag: "In Development", title: "eDrop", desc: "Audits how your software is built and surfaces the hidden waste — the energy-hungry patterns most teams never see. Lighter code, faster loads, a smaller carbon footprint at range and scale." }
 ].map((item, i) => (
               <Reveal key={i} delay={0.1 * (i + 1)}>
                 <div className="card-dark" style={{ padding: "36px 28px", height: "100%" }}>
@@ -575,102 +631,38 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
         </Reveal>
       </section>
 
-      {/* ═══ SERVICES ═══ */}
-      <section id="services" style={{ background: "transparent", padding: "120px 0", position: "relative", overflow: "hidden" }}>
+      {/* ═══ MISSION STATEMENTS — relocated from founder rows. PLACEHOLDER: Nick to reword/link to values ═══ */}
+      <section id="mission-statements" style={{ background: "transparent", padding: "120px 0", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 70%, rgba(212,168,83,0.04) 0%, transparent 50%)", pointerEvents: "none" }} />
         <div className="section-wrap">
           <Reveal>
-            <div className="label">How We Work With You</div>
+            <div className="label">Why We Build</div>
             <div className="rule" />
-            <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>Services</h2>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }} className="grid-2">
-            {[
-{ num: "01", title: "Human-Aligned System Design", desc: "Intelligence that follows human direction by design, not by patch. We help teams build systems that stay accountable to the person directing them, behave consistently under pressure, and earn trust because it was built into the architecture from the start — shaping where the human stays in the loop, where the system defers, and how accountability is enforced rather than promised." },
-{ num: "02", title: "Community-Focused Digital Tools", desc: "Tools built for the people existing structures overlook. We support initiatives serving social programs, public needs, and learning ecosystems — meeting an organization where it actually is: lean, resource-conscious, and answerable to the people it serves. We design tools that lower a barrier, extend a pathway, or return capability to the people who need it, and keep doing so as the work scales." },
-{ num: "03", title: "Learning & Skill Growth Pathways", desc: "Meet people where they are. Carry them further. We build learning systems that hold the whole route — from \"doesn't know yet\" to \"does\" — structured around where a person actually begins. This is the principle behind tools like WeeksWorth: free for the learners and communities who use it, paced to the person, meeting the early steps that usually go unsupported and staying with the learner the whole way up." },
-{ num: "04", title: "Ethical Review & Alignment", desc: "Commitment-driven evaluation for teams shaping responsible AI. We provide structured review for teams deploying AI into the real world — surfacing where a system's behavior drifts from its stated commitments, where transparency breaks down, and where accountability needs enforcing before deployment, not after harm. The standard is simple: human-in-the-loop is structural, not optional." },
-            ].map((s, i) => (
-              <Reveal key={i} delay={0.1 * i}>
-                <div style={{
-                  padding: "48px 40px", background: "rgba(10,26,24,0.6)",
-                  borderBottom: "1px solid rgba(42,157,143,0.1)",
-                  borderRight: i % 2 === 0 ? "1px solid rgba(42,157,143,0.1)" : "none",
-                  transition: "background 0.4s"
-                }}
-                  onMouseEnter={e => e.currentTarget.style.background = "rgba(26,74,64,0.4)"}
-                  onMouseLeave={e => e.currentTarget.style.background = "rgba(10,26,24,0.6)"}
-                >
-                  <div className="cg" style={{ fontSize: 48, color: "rgba(42,157,143,0.15)", fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>{s.num}</div>
-                  <h3 className="cg" style={{ fontSize: 22, fontWeight: 400, color: "var(--cream)", marginBottom: 16 }}>{s.title}</h3>
-                  <p className="dm" style={{ fontSize: 14, lineHeight: 1.8, color: "var(--muted)" }}>{s.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+          {/* TODO (Nick): reword both statements into the unified values pitch — leveraging tools to the underserved, linking back to the main ideas. Raw originals parked below. */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="grid-2">
+            <Reveal delay={0.1}>
+              <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
+                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+                  Leveraging cutting-edge AI, Dasein builds tools that democratize access to valuable, once-exclusive resources and services &mdash; unlocking opportunity and empowering the underserved.
+                </p>
+                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 24 }}>
+                  We exist to put capability in the hands of the people who&rsquo;ve been priced out of it. Every system we build is designed to lower a barrier, extend a pathway, or return power to the person who needs it &mdash; and to keep doing so at scale, reaching further with each deployment. This is technology built to serve human direction, not replace it: accountable, transparent, and aimed squarely at lifting communities that existing structures overlook.
+                </p>
+                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 0 }}>
+                  Built for the long game. Measured not by what it automates, but by who it reaches.
+                </p>
+              </blockquote>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <blockquote style={{ borderLeft: "2px solid var(--gold)", paddingLeft: 32 }}>
+                <p className="cg" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontStyle: "italic", lineHeight: 1.7, color: "var(--cream)", marginBottom: 0 }}>
+                  At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world.
+                </p>
+              </blockquote>
+            </Reveal>
           </div>
         </div>
-      </section>
-
-      {/* ═══ TEAM ═══ */}
-      <section id="team" style={{ background: "var(--deep)", padding: "120px 0", position: "relative" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 60% 40%, rgba(42,157,143,0.06) 0%, transparent 55%)", pointerEvents: "none" }} />
-        <div className="section-wrap">
-          <Reveal>
-            <div className="label">Co-Founder</div>
-            <div className="rule" />
-            <h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>
-              Built by people<br /><em className="gold">who believe it.</em>
-            </h2>
-          </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="team-grid">
-            {[
-              {
-                initial: "N", name: "Nickolas Smith", role: "Co-Founder & COO",
-                bio: "Theorist and systems architect. For fifteen years, Smith has built interconnected frameworks from first principles — deriving the structural logic beneath intelligence from biology, cognition, and physics, without institutional scaffolding. In 2020, working factory shifts, he documented the grounding problem, the limbic gap, and the architecture of latent concept-space in AI — years before the field's leading labs converged, independently, on the same questions. The convergence is the credential.", bio2: "He is the creator of CRDL, a falsifiable framework for detecting AI failure modes, built to measure the moment coherence begins to masquerade as authority. Where Dasein's engine learns when to stop thinking, his work maps the layer one cross-section over: grounding, consequence, and the conditions that keep compounded intelligence honest as it scales. Published continuously at Synthosphere, his research treats a non-institutional path not as a disadvantage, but as a method — perception reconstructed from the ground up, without shortcuts.",
-                tags: ["synthosphere Research", "CRDL Framework", "Symbolic Compression", "Rate Variable Dependency"],
-                quote: "The credential is a proxy. The work is the proof."
-              }
-            ].map((p, i) => (
-              <Reveal key={i} delay={0.15 * i}>
-                <div style={{ background: "rgba(15,36,32,0.5)", border: "1px solid rgba(42,157,143,0.15)", padding: "48px 40px", height: "100%" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 32 }}>
-                    <div style={{
-                      width: 60, height: 60, borderRadius: "50%",
-                      background: "linear-gradient(135deg, var(--teal), var(--bright))",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      border: "1px solid rgba(212,168,83,0.3)"
-                    }}>
-                      <span className="cg" style={{ fontSize: 24, fontWeight: 600, color: "var(--cream)" }}>{p.initial}</span>
-                    </div>
-                    <div>
-                      <div className="cg" style={{ fontSize: 22, color: "var(--cream)" }}>{p.name}</div>
-                      <div className="dm" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "var(--sage)" }}>{p.role}</div>
-                    </div>
-                  </div>
-                  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>{p.bio}</p>
-                  <p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>{p.bio2}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
-                    {p.tags.map(t => (
-                      <span key={t} className="dm" style={{ fontSize: 11, padding: "4px 12px", border: "1px solid rgba(42,157,143,0.25)", color: "var(--sage)", letterSpacing: 0.5 }}>{t}</span>
-                    ))}
-                  </div>
-                  <blockquote className="cg" style={{ fontStyle: "italic", fontSize: 16, color: "var(--gold)", borderLeft: "2px solid rgba(212,168,83,0.3)", paddingLeft: 16 }}>
-                    "{p.quote}"
-                  </blockquote>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ GOLD STRIP ═══ */}
-      <section id="our-mission" style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(94,67,38,0.25) 50%, rgba(12,31,42,0.95) 100%)", padding: "100px 40px" }}>
-        <Reveal>
-          <p className="cg" style={{ fontSize: "clamp(18px, 2.5vw, 28px)", color: "var(--cream)", maxWidth: 860, margin: "0 auto", textAlign: "center", lineHeight: 1.6, fontWeight: 400 }}>
-            "At Dasein, this means forging a transformative bridge between untapped brilliance and established expertise: a boundless nexus where visionaries, regardless of resources, converge with seasoned professionals and companies. Committed to innovation, sustainability, and inclusion, we envision a world where the pursuit of groundbreaking ideas transcends barriers, by connecting people through a complex and tailored network found in the heart of Dasein. Rooted in the belief that genius knows no economic boundary, we work to cultivate a landscape where the relentless drive for progress lightens the burdens of labor and moves humanity toward a more harmonious existence; drawing inspiration from the extraordinary minds that can be found emerging from the most unexpected corners of the world."
-          </p>
-        </Reveal>
       </section>
 
       {/* ═══ CONTACT ═══ */}
