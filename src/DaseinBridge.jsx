@@ -436,7 +436,7 @@ People lead. Technology follows. Humanity rises.
                     Subsumption Pattern Learning
                   </h3>
                   <p className="dm" style={{ fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 32, maxWidth: 520 }}>
-                    A self-distilling swarm intelligence — inspired by termite colonies and honeybee waggle dances — that converts expensive LLM deliberation into rapid, cheap reflexes. Gets smarter and cheaper with every deployment. Documented 10–50x cost reduction.
+                    A self-distilling swarm intelligence — inspired by termite colonies and honeybee waggle dances — that converts expensive LLM deliberation into rapid, cheap reflexes. Gets smarter and cheaper with every deployment. Documented 10–50x cost reduction. </p><p className="cg" style={{ fontSize: 19, lineHeight: 1.6, color: "var(--sage)", fontStyle: "italic", fontWeight: 600, marginTop: 4, marginBottom: 32, maxWidth: 560, borderLeft: "2px solid rgba(212,168,83,0.4)", paddingLeft: 18 }}>SPL's Institutional Separation of Power (SoP) architecture is unique — no major competitor offers constitutional governance as a native architectural primitive.
                   </p>
                   <div style={{ display: "flex", gap: 40, flexWrap: "wrap", marginBottom: 32 }}>
                     {[["13.9x", "Cost Reduction"], ["5.5%", "Reach Layer 2"], ["<5-15ms", "Layer 1 Response"]].map(([n, l]) => (
@@ -750,7 +750,13 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* PARTNERS */}
+<section style={{ background: "rgba(10,22,34,0.6)", borderTop: "1px solid rgba(42,157,143,0.1)", borderBottom: "1px solid rgba(42,157,143,0.1)", padding: "32px 40px", textAlign: "center" }}>
+<div className="dm" style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)", marginBottom: 8 }}>Proud Member Of</div>
+<div className="cg" style={{ fontSize: 20, color: "var(--sage)", fontWeight: 400 }}>MongoDB for Startups</div>
+</section>
+
+{/* FOOTER */}
       <footer style={{ background: "var(--forest)", borderTop: "1px solid rgba(42,157,143,0.1)", padding: "48px 40px" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
           <div className="cg" style={{ fontSize: 22 }}>Dasein<span className="gold" style={{ fontStyle: "italic" }}>Works</span></div>
