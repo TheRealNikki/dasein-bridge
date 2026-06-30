@@ -666,7 +666,37 @@ style={{ padding: "32px 28px", height: "100%", cursor: "pointer" }}
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="contact" style={{ background: "transparent", padding: "120px 0" }}>
+      <section style={{ background: "linear-gradient(180deg, rgba(12,31,42,0.95) 0%, rgba(11,40,45,0.92) 50%, rgba(12,31,42,0.95) 100%)", padding: "120px 0", position: "relative", overflow: "hidden" }}>
+<div className="section-wrap">
+<Reveal>
+<div className="label">Join The Mission</div>
+<div className="rule" />
+<h2 className="cg" style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "var(--cream)", marginBottom: 64 }}>Two Ways In</h2>
+</Reveal>
+<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="grid-2">
+<Reveal delay={0.1}>
+<div className="card-dark" style={{ padding: "48px 36px", height: "100%" }}>
+<div className="cg" style={{ fontSize: 48, color: "rgba(212,168,83,0.15)", fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>01</div>
+<h3 className="cg" style={{ fontSize: 26, fontWeight: 400, color: "var(--cream)", marginBottom: 16 }}>Invest</h3>
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 24 }}>DaseinWorks is building compounding intelligence infrastructure across enterprise, startup, and nonprofit domains. Every deployment feeds a pattern library no competitor can replicate — because replication requires the environments, and our deployments are the environments.</p>
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>We are open to conversations with investors who understand that the long game is the only game worth funding.</p>
+<a href="#contact" className="btn-ghost" style={{ fontSize: 11 }}>Start A Conversation</a>
+</div>
+</Reveal>
+<Reveal delay={0.2}>
+<div className="card-dark" style={{ padding: "48px 36px", height: "100%" }}>
+<div className="cg" style={{ fontSize: 48, color: "rgba(42,157,143,0.15)", fontWeight: 700, lineHeight: 1, marginBottom: 16 }}>02</div>
+<h3 className="cg" style={{ fontSize: 26, fontWeight: 400, color: "var(--cream)", marginBottom: 16 }}>The Fellowship</h3>
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 24 }}>We are building a global network of AI software engineers who want to build for their local communities. We provide the tools, the architecture, and the resources. You bring the mission and the time.</p>
+<p className="dm" style={{ fontSize: 14, lineHeight: 1.9, color: "var(--muted)", marginBottom: 28 }}>Sign on to the cause. Build something that matters where you are. Connect with builders doing the same thing everywhere else.</p>
+<a href="#contact" className="btn-ghost" style={{ fontSize: 11 }}>Join The Fellowship</a>
+</div>
+</Reveal>
+</div>
+</div>
+</section>
+
+<section id="contact" style={{ background: "transparent", padding: "120px 0" }}>
         <div className="section-wrap">
           <Reveal>
             <div className="label">Get In Touch</div>
